@@ -1,0 +1,123 @@
+{
+  "id": "94d1d8c0ddf911e591deace010ea24cf",
+  "workflow": "bb060be1da2c11e5a216ace010ea24cf",
+  "owner": "revesansparole",
+  "name": "tryout_size",
+  "time_init": 2,
+  "time_end": 20,
+  "data": [
+    {
+      "id": "0134dc444f6811e690ec0242b2ebf0f7",
+      "type": "ref",
+      "value": "lena"
+    },
+    {
+      "id": "12f09d924f6811e690ec0242b2ebf0f7",
+      "type": "none",
+      "value": null
+    },
+    {
+      "id": "28860e264f6811e690ec0242b2ebf0f7",
+      "type": "ref",
+      "value": "tryout_binarization_0"
+    },
+    {
+      "id": "6ce2d7a24f6811e690ec0242b2ebf0f7",
+      "type": "none",
+      "value": null
+    },
+    {
+      "id": "83cdd0344f6811e690ec0242b2ebf0f7",
+      "type": "image",
+      "value": "masked_image"
+    }
+  ],
+  "parameters": [
+    {
+      "node": 0,
+      "port": "uid",
+      "data": "0134dc444f6811e690ec0242b2ebf0f7"
+    },
+    {
+      "node": 0,
+      "port": "session",
+      "data": "12f09d924f6811e690ec0242b2ebf0f7"
+    },
+    {
+      "node": 1,
+      "port": "uid",
+      "data": "28860e264f6811e690ec0242b2ebf0f7"
+    },
+    {
+      "node": 1,
+      "port": "session",
+      "data": "6ce2d7a24f6811e690ec0242b2ebf0f7"
+    }
+  ],
+  "executions": [
+    {
+      "node": 0,
+      "time_init": 10,
+      "time_end": 11,
+      "inputs": [
+        {
+          "port": "uid",
+          "data": "0134dc444f6811e690ec0242b2ebf0f7"
+        },
+        {
+          "port": "session",
+          "data": "12f09d924f6811e690ec0242b2ebf0f7"
+        }
+      ],
+      "outputs": [
+        {
+          "port": "img",
+          "data": null
+        }
+      ]
+    },
+    {
+      "node": 1,
+      "time_init": 12,
+      "time_end": 13,
+      "inputs": [
+        {
+          "port": "uid",
+          "data": "28860e264f6811e690ec0242b2ebf0f7"
+        },
+        {
+          "port": "session",
+          "data": "6ce2d7a24f6811e690ec0242b2ebf0f7"
+        }
+      ],
+      "outputs": [
+        {
+          "port": "def",
+          "data": null
+        }
+      ]
+    },
+    {
+      "node": 2,
+      "time_init": 14,
+      "time_end": 15,
+      "inputs": [
+        {
+          "port": "img",
+          "data": null
+        },
+        {
+          "port": "mask",
+          "data": null
+        }
+      ],
+      "outputs": [
+        {
+          "port": "img",
+          "data": "83cdd0344f6811e690ec0242b2ebf0f7"
+        }
+      ]
+    }
+  ]
+
+}

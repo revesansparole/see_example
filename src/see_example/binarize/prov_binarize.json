@@ -1,0 +1,157 @@
+{
+  "id": "94d1c9c0ddf911e591deace010ea24cf",
+  "workflow": "bb060be1da2c11e5a216ace010ea24cf",
+  "owner": "revesansparole",
+  "name": "tryout_binarization",
+  "time_init": 1,
+  "time_end": 10,
+  "data": [
+    {
+      "id": "24535900ddfb11e594fdace010ea24cf",
+      "type": "ref",
+      "value": "lena"
+    },
+    {
+      "id": "44428200ddfa11e5846face010ea24cf",
+      "type": "none",
+      "value": null
+    },
+    {
+      "id": "a1b57dc2530a11e6a55fd4bed973e64a",
+      "type": "tuple",
+      "value": [128, 255, 255]
+    },
+    {
+      "id": "ac715861ddfa11e5837cace010ea24cf",
+      "type": "tuple",
+      "value": [128, 0, 0]
+    },
+    {
+      "id": "3f1f8ffe530a11e6a55fd4bed973e64a",
+      "type": "image",
+      "value": "bin_lena"
+    }
+  ],
+  "parameters": [
+    {
+      "node": 0,
+      "port": "uid",
+      "data": "24535900ddfb11e594fdace010ea24cf"
+    },
+    {
+      "node": 0,
+      "port": "session",
+      "data": "44428200ddfa11e5846face010ea24cf"
+    },
+    {
+      "node": 2,
+      "port": "threshold",
+      "data": "a1b57dc2530a11e6a55fd4bed973e64a"
+    },
+    {
+      "node": 3,
+      "port": "threshold",
+      "data": "ac715861ddfa11e5837cace010ea24cf"
+    }
+  ],
+  "executions": [
+    {
+      "node": 0,
+      "time_init": 3,
+      "time_end": 4,
+      "inputs": [
+        {
+          "port": "uid",
+          "data": "24535900ddfb11e594fdace010ea24cf"
+        },
+        {
+          "port": "session",
+          "data": "44428200ddfa11e5846face010ea24cf"
+        }
+      ],
+      "outputs": [
+        {
+          "port": "val",
+          "data": null
+        }
+      ]
+    },
+    {
+      "node": 1,
+      "time_init": 4,
+      "time_end": 5,
+      "inputs": [
+        {
+          "port": "img",
+          "data": null
+        }
+      ],
+      "outputs": [
+        {
+          "port": "img",
+          "data": null
+        }
+      ]
+    },
+    {
+      "node": 2,
+      "time_init": 5,
+      "time_end": 6,
+      "inputs": [
+        {
+          "port": "img",
+          "data": null
+        },
+        {
+          "port": "threshold",
+          "data": "a1b57dc2530a11e6a55fd4bed973e64a"
+        }
+      ],
+      "outputs": [
+        {
+          "port": "img",
+          "data": null
+        }
+      ]
+    },
+    {
+      "node": 3,
+      "time_init": 6,
+      "time_end": 7,
+      "inputs": [
+        {
+          "port": "img",
+          "data": null
+        },
+        {
+          "port": "threshold",
+          "data": "ac715861ddfa11e5837cace010ea24cf"
+        }
+      ],
+      "outputs": [
+        {
+          "port": "img",
+          "data": null
+        }
+      ]
+    },
+    {
+      "node": 4,
+      "time_init": 7,
+      "time_end": 8,
+      "inputs": [
+        {
+          "port": "img",
+          "data": null
+        }
+      ],
+      "outputs": [
+        {
+          "port": "img",
+          "data": "3f1f8ffe530a11e6a55fd4bed973e64a"
+        }
+      ]
+    }
+  ]
+
+}
