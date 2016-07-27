@@ -1,5 +1,5 @@
 
-# This file has been generated at Wed Jul 27 11:08:17 2016
+# This file has been generated at Wed Jul 27 12:05:01 2016
 
 from openalea.core import *
 
@@ -17,11 +17,11 @@ __institutes__ = 'INRIA/CIRAD'
 __icon__ = ''
 
 
-__all__ = ['_139701128877904']
+__all__ = ['_139821742851408']
 
 
 
-_139701128877904 = CompositeNodeFactory(uid='a0dc6d4d53d911e6907fd4bed973e64a',
+_139821742851408 = CompositeNodeFactory(uid='a0dc6d4d53d911e6907fd4bed973e64a',
                              name='see_ex_binarize',
                              description='Workflow used to binarize images from phenome project',
                              category='Unclassified',
@@ -33,10 +33,10 @@ _139701128877904 = CompositeNodeFactory(uid='a0dc6d4d53d911e6907fd4bed973e64a',
    6: ('see.ex.library', 'lower'),
    7: ('see.ex.library', 'upper'),
    8: ('see.ex.library', 'to_rgb')},
-                             elt_connections={  35520968: (4, 0, 6, 0),
-   35520992: (7, 0, 8, 0),
-   35521016: (2, 0, 4, 0),
-   35521040: (6, 0, 7, 0)},
+                             elt_connections={  15700424: (6, 0, 7, 0),
+   15700448: (2, 0, 4, 0),
+   15700472: (7, 0, 8, 0),
+   15700496: (4, 0, 6, 0)},
                              elt_data={  2: {  'block': False,
          'caption': 'load_data',
          'delay': 0,
@@ -128,7 +128,7 @@ _139701128877904 = CompositeNodeFactory(uid='a0dc6d4d53d911e6907fd4bed973e64a',
                  'use_user_color': True,
                  'user_application': None,
                  'user_color': None}},
-                             elt_value={  2: [(0, "''"), (1, 'None')],
+                             elt_value={  2: [(0, "'4f3a11b6528311e6b255d4bed973e64a'"), (1, 'None')],
    4: [],
    6: [(1, '[128, 255, 255]')],
    7: [(1, '[128, 0, 0]')],
