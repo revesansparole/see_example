@@ -1,5 +1,5 @@
 
-# This file has been generated at Tue Jul 26 10:39:43 2016
+# This file has been generated at Wed Jul 27 11:08:17 2016
 
 from openalea.core import *
 
@@ -17,11 +17,12 @@ __institutes__ = 'INRIA/CIRAD'
 __icon__ = ''
 
 
-__all__ = ['_139933204679120']
+__all__ = ['_139701128877904']
 
 
 
-_139933204679120 = CompositeNodeFactory(name='see_ex_binarize',
+_139701128877904 = CompositeNodeFactory(uid='a0dc6d4d53d911e6907fd4bed973e64a',
+                             name='see_ex_binarize',
                              description='Workflow used to binarize images from phenome project',
                              category='Unclassified',
                              doc='',
@@ -32,10 +33,10 @@ _139933204679120 = CompositeNodeFactory(name='see_ex_binarize',
    6: ('see.ex.library', 'lower'),
    7: ('see.ex.library', 'upper'),
    8: ('see.ex.library', 'to_rgb')},
-                             elt_connections={  27939272: (6, 0, 7, 0),
-   27939296: (2, 0, 4, 0),
-   27939320: (7, 0, 8, 0),
-   27939344: (4, 0, 6, 0)},
+                             elt_connections={  35520968: (4, 0, 6, 0),
+   35520992: (7, 0, 8, 0),
+   35521016: (2, 0, 4, 0),
+   35521040: (6, 0, 7, 0)},
                              elt_data={  2: {  'block': False,
          'caption': 'load_data',
          'delay': 0,

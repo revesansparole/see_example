@@ -1,5 +1,5 @@
 
-# This file has been generated at Tue Jul 26 10:48:22 2016
+# This file has been generated at Wed Jul 27 11:16:45 2016
 
 from openalea.core import *
 
@@ -17,11 +17,12 @@ __institutes__ = 'INRIA/CIRAD'
 __icon__ = ''
 
 
-__all__ = ['_139867285750544']
+__all__ = ['_140661546839312', 'see_example_library_image_apply_mask']
 
 
 
-_139867285750544 = CompositeNodeFactory(name='see_ex_size',
+_140661546839312 = CompositeNodeFactory(uid='b373ae3953da11e6907fd4bed973e64a',
+                             name='see_ex_size',
                              description='Workflow used to compute size of a plant from binary images',
                              category='Unclassified',
                              doc='',
@@ -29,8 +30,8 @@ _139867285750544 = CompositeNodeFactory(name='see_ex_size',
                              outputs=[],
                              elt_factory={  2: ('see', 'load_data'),
    3: ('see', 'load_data'),
-   6: ('see.ex.expe1.nodes', 'mask')},
-                             elt_connections={  30745080: (3, 0, 6, 1), 30745104: (2, 0, 6, 0)},
+   6: ('see.ex.expe1', 'mask')},
+                             elt_connections={  10990072: (3, 0, 6, 1), 10990096: (2, 0, 6, 0)},
                              elt_data={  2: {  'block': False,
          'caption': 'load_data',
          'delay': 0,
@@ -110,6 +111,22 @@ _139867285750544 = CompositeNodeFactory(name='see_ex_size',
                              lazy=True,
                              eval_algo='LambdaEvaluation',
                              )
+
+
+
+
+see_example_library_image_apply_mask = Factory(uid='b373ae3853da11e6907fd4bed973e64a',
+                name='mask',
+                authors='Jerome Chopard (wralea authors)',
+                description='',
+                category='Unclassified',
+                nodemodule='see_example.library.image',
+                nodeclass='apply_mask',
+                inputs=({'interface': 'IImage', 'name': 'img'}, {'interface': 'IImage', 'name': 'mask'}),
+                outputs=({'interface': 'IImage', 'name': 'img'},),
+                widgetmodule=None,
+                widgetclass=None,
+               )
 
 
 
