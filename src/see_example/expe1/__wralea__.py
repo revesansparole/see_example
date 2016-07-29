@@ -1,5 +1,5 @@
 
-# This file has been generated at Wed Jul 27 11:16:45 2016
+# This file has been generated at Fri Jul 29 14:24:11 2016
 
 from openalea.core import *
 
@@ -17,21 +17,19 @@ __institutes__ = 'INRIA/CIRAD'
 __icon__ = ''
 
 
-__all__ = ['_140661546839312', 'see_example_library_image_apply_mask']
+__all__ = ['_140666437983312', 'see_example_library_image_apply_mask']
 
 
 
-_140661546839312 = CompositeNodeFactory(uid='b373ae3953da11e6907fd4bed973e64a',
+_140666437983312 = CompositeNodeFactory(uid='b373ae3953da11e6907fd4bed973e64a',
                              name='see_ex_size',
                              description='Workflow used to compute size of a plant from binary images',
                              category='Unclassified',
                              doc='',
                              inputs=[],
                              outputs=[],
-                             elt_factory={  2: ('see', 'load_data'),
-   3: ('see', 'load_data'),
-   6: ('see.ex.expe1', 'mask')},
-                             elt_connections={  10990072: (3, 0, 6, 1), 10990096: (2, 0, 6, 0)},
+                             elt_factory={  2: ('see', 'load_data'), 3: ('see', 'load_data'), 6: ('see.ex.expe1', 'mask')},
+                             elt_connections={  23810552: (2, 0, 6, 0), 23810576: (3, 0, 6, 1)},
                              elt_data={  2: {  'block': False,
          'caption': 'load_data',
          'delay': 0,
@@ -39,8 +37,8 @@ _140661546839312 = CompositeNodeFactory(uid='b373ae3953da11e6907fd4bed973e64a',
          'id': 2,
          'lazy': True,
          'port_hide_changed': set([]),
-         'posx': -118.09078852573283,
-         'posy': 41.95108015699692,
+         'posx': -96.75558395353109,
+         'posy': 64.24159239661068,
          'priority': 0,
          'use_user_color': False,
          'user_application': None,
@@ -52,8 +50,8 @@ _140661546839312 = CompositeNodeFactory(uid='b373ae3953da11e6907fd4bed973e64a',
          'id': 3,
          'lazy': True,
          'port_hide_changed': set([]),
-         'posx': -5.747127145247607,
-         'posy': 41.95108015699692,
+         'posx': -30.266690608822746,
+         'posy': 63.92315650747335,
          'priority': 0,
          'use_user_color': False,
          'user_application': None,
@@ -102,8 +100,8 @@ _140661546839312 = CompositeNodeFactory(uid='b373ae3953da11e6907fd4bed973e64a',
    6: [],
    '__in__': [],
    '__out__': []},
-                             elt_ad_hoc={  2: {'position': [-118.09078852573283, 41.95108015699692], 'userColor': None, 'useUserColor': False},
-   3: {'position': [-5.747127145247607, 41.95108015699692], 'userColor': None, 'useUserColor': False},
+                             elt_ad_hoc={  2: {'position': [-96.75558395353109, 64.24159239661068], 'userColor': None, 'useUserColor': False},
+   3: {'position': [-30.266690608822746, 63.92315650747335], 'userColor': None, 'useUserColor': False},
    4: {  'position': [20, 150], 'useUserColor': False, 'userColor': None},
    6: {'position': [-50.18443815431721, 106.57387748151154], 'userColor': None, 'useUserColor': False},
    '__in__': {'position': [0, 0], 'userColor': None, 'useUserColor': True},

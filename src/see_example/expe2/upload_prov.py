@@ -17,11 +17,11 @@ container = "expe2.executions"
 session = log_to_see("revesansparole", "r")
 
 # check existence of top container
-top_cid = get_single_by_name(session, 'container', "see.ex.expe2")
+top_cid = get_single_by_name('container', "see.ex.expe2", session)
 
 # check existence of container
 try:
-    cid = get_single_by_name(session, 'container', container)
+    cid = get_single_by_name('container', container, session)
     remove_ro(session, cid, True)
 except KeyError:
     pass
@@ -35,11 +35,11 @@ with open(pth, 'r') as f:
     prov = json.load(f)
 
 # find associated workflow on SEE
-uid = get_single_by_name(session, 'workflow', 'see_ex_color')
+uid = get_single_by_name('workflow', 'see_ex_color', session)
 prov['workflow'] = uid
 
 # find lena id on SEE
-uid = get_single_by_name(session, 'ro', 'tryout_binarization_0')
+uid = get_single_by_name('ro', 'tryout_binarization_0', session)
 prov['data'][0]['type'] = 'ref'
 prov['data'][0]['value'] = uid
 
@@ -55,7 +55,7 @@ input_ref = set()
 for did in input_data:
     ddata = get_data_def(did)
     if ddata['type'] == 'ref':
-        if get_ro_def(session, ddata['value']) is None:
+        if get_ro_def(ddata['value'], session) is None:
             msg = "data '%s' used as input is not registered on SEE" % ddata['value']
             raise UserWarning(msg)
         else:
@@ -78,7 +78,7 @@ for i, did in enumerate(output_data):
 
 # upload prov on SEEweb
 if 'id' in prov:
-    if get_ro_def(session, prov['id']) is not None:
+    if get_ro_def(prov['id'], session) is not None:
         remove_ro(session, prov['id'], False)
 
 pid = register_ro(session, 'workflow_prov', prov)

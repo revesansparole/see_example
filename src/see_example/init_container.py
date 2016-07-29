@@ -6,7 +6,7 @@ session = log_to_see("revesansparole", "r")
 
 # create container if it doesn't exist yet
 try:
-    cid = get_single_by_name(session, 'container', container)
+    cid = get_single_by_name('container', container, session)
     remove_ro(session, cid, True)
 except KeyError:
     pass
@@ -19,7 +19,7 @@ cid = register_ro(session,
 # upload image on SEEweb
 roid = '4f3a11b6528311e6b255d4bed973e64a'
 
-if get_ro_def(session, roid) is not None:
+if get_ro_def(roid, session) is not None:
     remove_ro(session, roid, False)
 
 img = dict(id=roid, name="lena")

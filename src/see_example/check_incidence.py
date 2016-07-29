@@ -1,6 +1,6 @@
 from openalea.container import Graph
 
-from see_scripts.see_client import get_by_name, log_to_see, search
+from see_scripts.see_client import get_single_by_name, log_to_see, search
 
 session = log_to_see("revesansparole", "r")
 
@@ -17,13 +17,13 @@ def get_by_id(uid):
 
 
 # retrieve id of workflow that want to be modified
-wid, = get_by_name(session, 'workflow', "see_ex_binarize")
+wid = get_single_by_name('workflow', "see_ex_binarize", session)
 rid = g.add_vertex()
 vprop[rid] = ("see_ex_binarize", wid)
 
 # find all executions of this workflow
 query = dict(type='workflow_prov', use=wid)
-exec_ids = search(session, query)
+exec_ids = search(query, session)
 for eid in exec_ids:
     vid = g.add_vertex()
     vprop[vid] = ('wprov', eid)
@@ -35,7 +35,7 @@ produced_data = set()
 for eid in exec_ids:
     pid = get_by_id(eid)
     query = dict(type='workflow_prov', produce=eid)
-    for did in search(session, query):
+    for did in search(query, session):
         if did in produced_data:
             vid = get_by_id(did)
         else:
@@ -49,7 +49,7 @@ exec_ids = set()
 for did in produced_data:
     pid = get_by_id(did)
     query = dict(type='workflow_prov', consume=did)
-    for eid in search(session, query):
+    for eid in search(query, session):
         if eid in exec_ids:
             vid = get_by_id(eid)
         else:
@@ -63,7 +63,7 @@ produced_data = set()
 for eid in exec_ids:
     pid = get_by_id(eid)
     query = dict(type='workflow_prov', produce=eid)
-    for did in search(session, query):
+    for did in search(query, session):
         if did in produced_data:
             vid = get_by_id(did)
         else:

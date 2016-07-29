@@ -1,5 +1,5 @@
 
-# This file has been generated at Wed Jul 27 11:18:48 2016
+# This file has been generated at Fri Jul 29 14:30:47 2016
 
 from openalea.core import *
 
@@ -17,11 +17,11 @@ __institutes__ = 'INRIA/CIRAD'
 __icon__ = ''
 
 
-__all__ = ['_139801131264912']
+__all__ = ['_140535302274960']
 
 
 
-_139801131264912 = CompositeNodeFactory(uid='146f9bb853db11e6907fd4bed973e64a',
+_140535302274960 = CompositeNodeFactory(uid='146f9bb853db11e6907fd4bed973e64a',
                              name='see_ex_color',
                              description='Workflow used to average color of a plant from binary images',
                              category='Unclassified',
@@ -29,7 +29,7 @@ _139801131264912 = CompositeNodeFactory(uid='146f9bb853db11e6907fd4bed973e64a',
                              inputs=[],
                              outputs=[],
                              elt_factory={  2: ('see', 'load_data'), 6: ('see.ex.library', 'average')},
-                             elt_connections={  8118800: (2, 0, 6, 0)},
+                             elt_connections={  33841680: (2, 0, 6, 0)},
                              elt_data={  2: {  'block': False,
          'caption': 'load_data',
          'delay': 0,
@@ -37,8 +37,8 @@ _139801131264912 = CompositeNodeFactory(uid='146f9bb853db11e6907fd4bed973e64a',
          'id': 2,
          'lazy': True,
          'port_hide_changed': set([]),
-         'posx': -118.09078852573283,
-         'posy': 41.95108015699692,
+         'posx': -77.6312745640333,
+         'posy': 63.625819779335956,
          'priority': 0,
          'use_user_color': False,
          'user_application': None,
@@ -83,7 +83,7 @@ _139801131264912 = CompositeNodeFactory(uid='146f9bb853db11e6907fd4bed973e64a',
                  'user_application': None,
                  'user_color': None}},
                              elt_value={  2: [(0, "''"), (1, 'None')], 6: [(1, '[]')], '__in__': [], '__out__': []},
-                             elt_ad_hoc={  2: {'position': [-118.09078852573283, 41.95108015699692], 'userColor': None, 'useUserColor': False},
+                             elt_ad_hoc={  2: {'position': [-77.6312745640333, 63.625819779335956], 'userColor': None, 'useUserColor': False},
    3: {  'position': [-5.747127145247607, 41.95108015699692],
          'useUserColor': False,
          'userColor': None},
