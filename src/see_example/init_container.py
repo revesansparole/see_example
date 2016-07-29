@@ -1,3 +1,4 @@
+from base64 import b64encode
 from see_scripts.see_client import (connect, get_ro_def, get_single_by_name,
                                     log_to_see, register_ro, remove_ro)
 
@@ -23,5 +24,8 @@ if get_ro_def(roid, session) is not None:
     remove_ro(session, roid, False)
 
 img = dict(id=roid, name="lena")
-pid = register_ro(session, 'ro', img)
+with open("lena.png", 'rb') as f:
+    img['value'] = b64encode(f.read())
+
+pid = register_ro(session, 'image', img)
 connect(session, cid, pid, 'contains')
