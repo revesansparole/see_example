@@ -1,6 +1,6 @@
 {
   "id": "94d1d8c0ddf911e591deace010ea24cf",
-  "workflow": "bb060be1da2c11e5a216ace010ea24cf",
+  "workflow": "b373ae3953da11e6907fd4bed973e64a",
   "owner": "revesansparole",
   "name": "tryout_size",
   "time_init": 2,
@@ -9,7 +9,7 @@
     {
       "id": "0134dc444f6811e690ec0242b2ebf0f7",
       "type": "ref",
-      "value": "lena"
+      "value": "4f3a11b6528311e6b255d4bed973e64a"
     },
     {
       "id": "12f09d924f6811e690ec0242b2ebf0f7",

@@ -87,3 +87,9 @@ with open("graph.txt", 'w') as f:
         tt = title(g.target(eid))
         f.write(" %s -> %s\n" % (st, tt))
     f.write("}\n")
+
+
+# transform it into png
+import subprocess
+
+subprocess.call("dot -Tpng -ograph.png graph.txt", shell=True)
