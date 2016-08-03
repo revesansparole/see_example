@@ -31,7 +31,7 @@ if get_ro_def(roid, session) is not None:
 img = dict(id=roid,
            name="lena",
            description="Classical sample image for demo purpose")
-with open("lena.png", 'rb') as f:
+with open("minilena.png", 'rb') as f:
     img['value'] = b64encode(f.read())
 
 pid = register_ro(session, 'image', img)
