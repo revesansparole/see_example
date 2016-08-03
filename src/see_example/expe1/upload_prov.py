@@ -29,9 +29,9 @@ with open(pth, 'r') as f:
 
 
 # external inputs SEE
-uid = get_single_by_name('ro', 'tryout_binarization_0', session)
-prov['data'][2]['type'] = 'ref'
-prov['data'][2]['value'] = uid
+# uid = get_single_by_name('ro', 'tryout_binarization_0', session)
+# prov['data'][2]['type'] = 'ref'
+# prov['data'][2]['value'] = uid
 
 # upload provenance
 upload_prov(session, prov, cid, overwrite=True)

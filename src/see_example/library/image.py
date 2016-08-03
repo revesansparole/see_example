@@ -1,4 +1,36 @@
+from base64 import b64decode, b64encode
+from io import BytesIO
+from numpy import array, rollaxis, where, zeros
 from PIL import Image
+
+
+def from_png(data):
+    """Load an image from PNG data
+
+    Args:
+        data (str): PNG encoded string
+
+    Returns:
+        (Image.Image)
+    """
+    img = Image.open(BytesIO(b64decode(data)))
+    return img.convert('RGB')
+
+
+def to_png(img):
+    """Encode an image into a PNG stream
+
+    Args:
+        img (Image.Image):
+
+    Returns:
+        (str)
+    """
+    txt = BytesIO()
+    img.save(txt, 'PNG')
+
+    # encode it back
+    return b64encode(txt.getvalue())
 
 
 def load_image(pth):
@@ -8,7 +40,7 @@ def load_image(pth):
         pth (str): path to image file
 
     Returns:
-        (Image)
+        (Image.Image)
     """
     img = Image.open(pth)
     return img
@@ -18,13 +50,13 @@ def store_image(img, pth):
     """Write an image on disk
 
     Args:
-        img (Image):
+        img (Image.Image):
         pth (str): path to image file
 
     Returns:
         (str): the path used
     """
-    img.write(pth)
+    img.save(pth)
     return pth
 
 
@@ -37,11 +69,16 @@ def to_hsv(img):
     Returns:
         (Image): HSV triplets
     """
-    return img
+    hsv = from_png(img).convert('HSV')
+
+    # create false rgb image with hsv data
+    false_rgb = Image.frombytes('RGB', hsv.size, hsv.tobytes())
+
+    return to_png(false_rgb)
 
 
 def to_rgb(img):
-    """Convert a HXV image into RGB
+    """Convert a HSV image into RGB
 
     Args:
         img (Image): HSV triplets
@@ -49,11 +86,15 @@ def to_rgb(img):
     Returns:
         (Image): RGB triplets
     """
-    return img
+    false_rgb = from_png(img)
+    hsv = Image.frombytes('HSV', false_rgb.size, false_rgb.tobytes())
+
+    img = hsv.convert('RGB')
+    return to_png(img)
 
 
 def lower(img, threshold):
-    """Force zero on pixels lower than threshold
+    """Force black on pixels lower than threshold
 
     Args:
         img (Image):
@@ -62,11 +103,24 @@ def lower(img, threshold):
     Returns:
         (Image)
     """
-    return img
+    hsv = from_png(img)
+    # filter
+    a = array(hsv)
+    mask1d = (a < threshold).all(axis=2)
+    mask3d = rollaxis(array([mask1d] * 3), 0, 3)
+
+    black_a = rollaxis(array([a[:, :, 0],
+                              zeros(a.shape[:2]),
+                              zeros(a.shape[:2])],
+                             dtype=a.dtype), 0, 3)
+    res = where(mask3d, black_a, a)
+
+    false_rgb = Image.fromarray(res, 'RGB')
+    return to_png(false_rgb)
 
 
 def upper(img, threshold):
-    """Force 255 on pixels higher than threshold
+    """Force white on pixels higher than threshold
 
     Args:
         img (Image):
@@ -75,7 +129,20 @@ def upper(img, threshold):
     Returns:
         (Image)
     """
-    return img
+    hsv = from_png(img)
+    # filter
+    a = array(hsv)
+    mask1d = (a >= threshold).all(axis=2)
+    mask3d = rollaxis(array([mask1d] * 3), 0, 3)
+
+    white_a = rollaxis(array([a[:, :, 0],
+                              zeros(a.shape[:2]),
+                              zeros(a.shape[:2]) + 255],
+                             dtype=a.dtype), 0, 3)
+    res = where(mask3d, white_a, a)
+
+    false_rgb = Image.fromarray(res, 'RGB')
+    return to_png(false_rgb)
 
 
 def apply_mask(img, mask):
@@ -88,7 +155,12 @@ def apply_mask(img, mask):
     Returns:
         (Image)
     """
-    return img
+    img = array(from_png(img))
+    mask = array(from_png(mask))
+
+    res = where(mask, img, zeros(img.shape, dtype=img.dtype))
+
+    return to_png(Image.fromarray(res, 'RGB'))
 
 
 def average(img, scaling):
