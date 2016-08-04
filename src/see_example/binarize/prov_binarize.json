@@ -7,7 +7,7 @@
     }, 
     {
       "id": "f4b36d3e599911e6a3a6d4bed973e64a", 
-      "type": "IStr", 
+      "type": "ref",
       "value": "4f3a11b6528311e6b255d4bed973e64a"
     }, 
     {
