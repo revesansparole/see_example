@@ -33,8 +33,8 @@ with open(pth, 'r') as f:
 
 # external inputs SEE
 uid = get_single_by_name('ro', 'tryout_binarization_0', session)
-prov['data'][3]['type'] = 'ref'
-prov['data'][3]['value'] = uid
+prov['data'][1]['type'] = 'ref'
+prov['data'][1]['value'] = uid
 
 # upload provenance
 upload_prov(session, prov, cid, overwrite=True)

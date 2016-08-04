@@ -17,7 +17,7 @@
     }, 
     {
       "id": "f5bb0fe0599e11e6a3a6d4bed973e64a", 
-      "type": "IStr", 
+      "type": "ref",
       "value": "4f3a11b6528311e6b255d4bed973e64a"
     }, 
     {
