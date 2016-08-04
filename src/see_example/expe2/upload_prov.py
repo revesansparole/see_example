@@ -21,7 +21,10 @@ except KeyError:
     pass
 cid = register_ro(session,
                   'container',
-                  dict(name=container, id="2a581568531511e6a55fd4bed973e64a"))
+                  dict(id="2a581568531511e6a55fd4bed973e64a",
+                       name=container,
+                       description="Container used to store executions of "
+                                   "main workflow"))
 connect(session, top_cid, cid, 'contains')
 
 # open provenance file

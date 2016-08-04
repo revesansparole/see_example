@@ -20,7 +20,10 @@ except KeyError:
     pass
 cid = register_ro(session,
                   'container',
-                  dict(name=container, id="f2146486526f11e6b255d4bed973e64a"))
+                  dict(id="f2146486526f11e6b255d4bed973e64a",
+                       name=container,
+                       description="Container used to store executions of "
+                                   "main workflow"))
 connect(session, top_cid, cid, 'contains')
 
 # open provenance file
@@ -29,9 +32,9 @@ with open(pth, 'r') as f:
 
 
 # external inputs SEE
-# uid = get_single_by_name('ro', 'tryout_binarization_0', session)
-# prov['data'][2]['type'] = 'ref'
-# prov['data'][2]['value'] = uid
+uid = get_single_by_name('ro', 'tryout_binarization_0', session)
+prov['data'][3]['type'] = 'ref'
+prov['data'][3]['value'] = uid
 
 # upload provenance
 upload_prov(session, prov, cid, overwrite=True)

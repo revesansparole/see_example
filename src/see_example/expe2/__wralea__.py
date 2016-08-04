@@ -7,7 +7,7 @@ from openalea.core import *
 __name__ = 'see.ex.expe2'
 
 __editable__ = True
-__description__ = 'First experiment conducted on phenome'
+__description__ = 'Second experiment conducted on phenome'
 __license__ = 'Cecill-C'
 __url__ = ''
 __alias__ = []

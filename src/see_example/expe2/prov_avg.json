@@ -3,6 +3,7 @@
   "workflow": "146f9bb853db11e6907fd4bed973e64a",
   "owner": "revesansparole",
   "name": "tryout_avg",
+  "description": "Execution performed as a proof of concept only",
   "time_init": 2,
   "time_end": 20,
   "data": [

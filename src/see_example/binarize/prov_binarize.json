@@ -53,7 +53,8 @@
       "type": "IImage", 
       "value": "iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAIAAAC1w6d9AAACAklEQVR4nMVZ23bEIAiUnP7/L9sHW+siDBcxnafdRGVEroZaa733dhNEtIsgovFDk/7cpqXBlPu8w2NqyP/qDWZDPTsDrLavQ6mrvLRhiIaY1xkRMTXsTyY00mAzSWYJu4mSE9ToBCCHRTrxkm9GQUQXmZlKxRPr7SwxTJxy/TRFcvQLMNjFTAySOQMHkYXhKJ6FRpqc2Nu7duYfvw/IMEs7HQO2hzAzMccdQtxqmFnv/ZCcc27mNMfSU8Dqp6bPjo2t00/rM3E+44QlrW89anMxYwsdFhrXTzMH/ybLslN5UeRlptXyTlqJWR/MTOP17Lsq2n10KKbDi8/3npYpOMfV1tnehmBabMAMYHhZg1mU1ipeG5BOsojZjIpaAbOGzXXMrrYEM6MTZqZzaN2h6arOZrmHX+3ZqcFtgGUZkM7M+4ir90iqzrQQMKAl+EJmfzqLNmqAR6jet5kB7O7puaTQCh4twjHw0xQDUiIKJCollVmtlZxHmfDNnimsqrOSfbMkiJ+g9y4w26udlWioQsS3kNiNHtPpzhWmXa4MFbDkMf/avtm2/RUW1qgPYKvcMymzUmeiBTv7r68qDD/M1tLKLA/T3QA4O/t7gCcbVkUsLI5HWtwghQ5azI9+Twp0ws5MjMEiFLjmuHuDfNKfJm+Qq7DTmrJiOis5UMaAPZxcvwHhTF+uclb7JAAAAABJRU5ErkJggg=="
     }
-  ], 
+  ],
+  "description": "Execution performed as a proof of concept only",
   "executions": [
     {
       "inputs": [], 

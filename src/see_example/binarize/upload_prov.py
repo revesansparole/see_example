@@ -1,6 +1,6 @@
 import json
 
-from see_scripts.see_client import (connect, get_ro_def, get_single_by_name,
+from see_scripts.see_client import (connect, get_single_by_name,
                                     log_to_see, register_ro, remove_ro)
 from see_scripts.wlf_client import upload_prov
 
@@ -20,7 +20,10 @@ except KeyError:
     pass
 cid = register_ro(session,
                   'container',
-                  dict(name=container, id="6722cbfc526f11e6b255d4bed973e64a"))
+                  dict(id="6722cbfc526f11e6b255d4bed973e64a",
+                       name=container,
+                       description="Container used to store executions of "
+                                   "main workflow"))
 connect(session, top_cid, cid, 'contains')
 
 # open provenance file
