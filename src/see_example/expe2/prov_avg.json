@@ -40,7 +40,7 @@
       "data": "b42cb40c531411e6a55fd4bed973e64a"
     },
     {
-      "node": 1,
+      "node": 2,
       "port": "scaling",
       "data": "b80a18d0531411e6a55fd4bed973e64a"
     }
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "node": 1,
+      "node": 2,
       "time_init": 12,
       "time_end": 13,
       "inputs": [
